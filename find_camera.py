@@ -6,9 +6,9 @@ for i in range(10):
     if cap.isOpened():
         ret, frame = cap.read()
         if ret and frame is not None:
-            print(f"✅ Camera {i} works - Resolution: {frame.shape[1]}x{frame.shape[0]}")
+            print(f"Camera {i} works - Resolution: {frame.shape[1]}x{frame.shape[0]}")
         else:
-            print(f"⚠️ Camera {i} opens but can't read frames")
+            print(f"Camera {i} opens but can't read frames")
         cap.release()
     else:
-        print(f"❌ Camera {i} not found")
+        print(f"Camera {i} not found")

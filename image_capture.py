@@ -5,8 +5,9 @@ label = "nonbio"  # change to recyclable / nonbio
 save_dir = f"dataset/{label}"
 os.makedirs(save_dir, exist_ok=True)
 
-# cap = cv2.VideoCapture("http://10.181.225.204:8080/video")
-cap = cv2.VideoCapture("http://10.181.225.204:8080/video")
+# cap = cv2.VideoCapture("http://10.181.225.204:8080/video") ito ay kapag naka hotspot
+# cap = cv2.VideoCapture("http://192.168.2.165:8080/video")
+cap = cv2.VideoCapture("http://192.168.2.165:8080/video")
 count = 0
 
 while True:

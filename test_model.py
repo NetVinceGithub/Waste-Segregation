@@ -6,21 +6,17 @@ MODEL_PATH = "garbage_model.h5"
 IMAGE_SIZE = 224
 CLASS_NAMES = ["BIO", "NON-BIO", "RECYCLABLE"]
 
-# Load model
 model = load_model(MODEL_PATH)
 
-# Capture one frame from camera
 cap = cv2.VideoCapture(1)
 ret, frame = cap.read()
 cap.release()
 
 if ret:
-    # Preprocess
     img = cv2.resize(frame, (IMAGE_SIZE, IMAGE_SIZE))
     img = img.astype("float32") / 255.0
     img = np.expand_dims(img, axis=0)
     
-    # Predict
     predictions = model.predict(img)[0]
     
     print("\n=== MODEL PREDICTION ===")
